@@ -20,7 +20,7 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={"#FFFFFF"} barStyle={"dark-content"}/>
       <Image
-        source={require('../../constants/images/bit2.png')}
+        source={require('../../constants/images/bit2.webp')}
         resizeMode="cover"
         style={styles.image}
       />
