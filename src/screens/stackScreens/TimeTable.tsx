@@ -12,7 +12,7 @@ import { RootStackParamList } from '../RootNavigator';
 
 type TimeTableProps = NativeStackScreenProps<RootStackParamList, 'TimeTable'>;
 
-const tabs = ['B.Tech', 'IMSc.', 'Mgmt.', 'Others'];
+const tabs = ['B.Tech', 'I.MSc.', 'Mgmt.', 'Others'];
 
 const branchData: Record<string, string[]> = {
   'B.Tech': [
@@ -26,7 +26,7 @@ const branchData: Record<string, string[]> = {
     'Civil Engineering Timetable',
     'Food Tech Timetable'
   ],
-  'IMSc.': [
+  'I.MSc.': [
     'MnC Timetable', 
     'CQEDS Timetable',
     'Physics Timetable',

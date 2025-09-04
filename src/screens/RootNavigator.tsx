@@ -8,6 +8,7 @@ import AcademicCalendar from './stackScreens/AcademicCalendar';
 import Syllabus from './stackScreens/Syllabus';
 import TimeTable from './stackScreens/TimeTable';
 import PdfViewer from '../components/PdfViewer';
+import SemesterTabs from './tabScreens/SemesterTabs';
 
 export type RootStackParamList = {
   Tabs: undefined,
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   TimeTable:undefined
   TimeTableDetail: { branch: string; tab: string };
   PdfViewer: { pdfName: string; item: string };
+  SemesterTabs: { branch: string; tab: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -50,13 +52,17 @@ const RootNavigator = () => {
         <Stack.Screen 
         options={{headerTitle:'Time Table'}} name="TimeTable" component={TimeTable} />
 
-        {/* <Stack.Screen name="TimeTableDetail" component={TimeTableDetail} /> */}
-
         <Stack.Screen name="PdfViewer" component={PdfViewer} 
         options={({ route }) => ({
           title: route.params.item,
         })}
       />
+
+      <Stack.Screen name="SemesterTabs" component={SemesterTabs} options={{
+        headerShown:true,
+        headerTitle:'',
+        headerShadowVisible:false
+        }}/>
       </Stack.Navigator>
   );
 };

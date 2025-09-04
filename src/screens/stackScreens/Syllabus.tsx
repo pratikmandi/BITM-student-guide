@@ -12,11 +12,12 @@ import { RootStackParamList } from '../RootNavigator';
 
 type SyllabusProps = NativeStackScreenProps<RootStackParamList, 'Syllabus'>;
 
-const tabs = ['B.Tech', 'IMSc.', 'Mgmt.', 'Others'];
+const tabs = ['B.Tech', 'I.MSc.', 'Mgmt.', 'Others'];
 
 const branchData: Record<string, string[]> = {
   'B.Tech': [
     'Computer Science and Engineering', 
+    'Artificial Intelligence and Machine Learning',
     'Electronics and Communication Engineering', 
     'Electrical and Electronics Engineering', 
     'Production and Industrial Engineering', 
@@ -26,7 +27,7 @@ const branchData: Record<string, string[]> = {
     'Civil and Environmental Engineering',
     'Centre for Food Engineering & Technology'
   ],
-  'IMSc.': [
+  'I.MSc.': [
     'Mathematics and Computing', 
     'Centre for Quantitative Economics & Data Science',
     'Physics',
@@ -37,13 +38,32 @@ const branchData: Record<string, string[]> = {
     'Integrated MBA',
     'Bachelor of Hotel Management and Catering Technology'
   ],
-  Others: [
+  'Others': [
     'Architecture and Planning',
+    'Bachelor of Pharmacy',
     'Space Engineering and Rocketry',
-    'Pharmacy',
-    'Remote Sensing and Geoinformatics',
-    'BMLT',
-    'Ph.D'
+    'B.MLT',
+    // 'M.Tech. in Computer Science and Engineering',
+    // 'M.Tech. in Artificial Intelligence and Machine Learning',
+    'Master of Computer Applications',
+    // 'M.Tech. Instrumentation & Control',
+    // 'M.Tech. Microwave Engineering',
+    // 'M.Tech. Wireless Communication',
+    // 'M.Tech Power System',
+    // 'M.Tech Control System',
+    // 'M.Tech Power Electronics',
+    // 'M.Tech in Mechanical Engineering (Energy Technology)',
+    // 'M.Tech. in Mechanical Engineering (Computer Aided Analysis and Design)',
+    // 'M. Tech in Mechanical Engineering (Heat Power Engineering)',
+    // 'M. Tech. in Mechanical Engineering (Design of Mechanical Equipments)',
+    // 'M.Tech. in Biotechnology',
+    // 'M.Sc. in Biotechnology',
+    // 'M. Pharm. Pharmacology',
+    // 'M. Pharm. Pharmaceutical Quality Assurance',
+    // 'M. Pharm. Pharmaceutical Chemistry',
+    // 'M. Pharm. Pharmacognosy',
+    'M.Tech. Remote Sensing',
+    'M.Sc. Geoinformatics',
   ],
 };
 
@@ -78,12 +98,12 @@ const Syllabus: React.FC<SyllabusProps> = ({ navigation }) => {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
-            // onPress={() =>
-            //   navigation.navigate('', {
-            //     branch: item,
-            //     tab: activeTab,
-            //   })
-            // }
+            onPress={() =>
+              navigation.navigate('SemesterTabs', {
+                branch: item,
+                tab: activeTab,
+              })
+            }
           >
             <Text style={styles.cardText}>{item}</Text>
           </TouchableOpacity>
